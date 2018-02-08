@@ -78,7 +78,8 @@
           <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/912782eca305cda2bb2dfab2cdb808e9214d4bfc">3 - Encapsulate Field - Nachtrag</a> aussehen.</p>
 
           <h2>Schritt 5</h2>
-          <p>Jetzt wollen wir die Methode calc in eine neue Klasse CampsitePricingCalculator umziehen - Stichwort Single Resposibility Princile. Der neue Klasse ist verantwortlich für die Preisberechnung, die bestehende für die Verwaltung der Buchungen.</p>
+          <p>Jetzt wollen wir die Methode calc in eine neue Klasse CampsitePricingCalculator umziehen - Stichwort Single Resposibility Principle. Der neue Klasse ist verantwortlich für die Preisberechnung, die bestehende für die Verwaltung der Buchungen.</p>
+          <p>Außerdem könnte man hier mit etwas Fantasie den Smell <a href="https://sourcemaking.com/refactoring/smells/large-class">Large Class</a> sehen.</p>
           <p>Das entsprechende Refactoring dazu heißt <a href="https://sourcemaking.com/refactoring/replace-method-with-method-object">Replace Method with Method Object</a>.</p>
           
           <p>Nachdem die Methode calc in die neue Klasse umgezogen wurde, sollen die Felder tentBase, cabinBase, caravanBase, lastAvailableStart ebenfalls umgezogen werden. Schließlich werden sie nur für die Preisberechnung genutzt. Das entsprechende Refactoring ist <a href="https://sourcemaking.com/refactoring/move-field">Move Field</a>.</p>
@@ -103,7 +104,7 @@
           <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/284ad835a2f1c59de7a65a4ea42aba96883113e0">8 - Hide Delegate</a> aussehen.</p>
 
           <h2>Schritt 10</h2>
-          <p>Als nächstes wollen wir die Unschönheit beseitigen, dass bei calc übergeben wird, ob der Preis für ein Zelt, einen Wohnwagen oder für eine Hütte berechnet werden soll - hier passieren leicht Fehler beim Aufruf der Methode. Deswegen wollen wir <a href="https://sourcemaking.com/refactoring/replace-parameter-with-explicit-methods">Replace Parameter with Explicit Methods</a> verwenden, um den Aufruf einfacher zu gestalten.</p>
+          <p>Als nächstes wollen wir die Unschönheit beseitigen, dass bei calc übergeben wird, ob der Preis für ein Zelt, einen Wohnwagen oder für eine Hütte berechnet werden soll - hier passieren leicht Fehler beim Aufruf der Methode <a href="https://sourcemaking.com/refactoring/smells/long-parameter-list">Long Parameter List</a>. Deswegen wollen wir <a href="https://sourcemaking.com/refactoring/replace-parameter-with-explicit-methods">Replace Parameter with Explicit Methods</a> verwenden, um den Aufruf einfacher zu gestalten.</p>
           <p>Ziel ist es, am Ende 3 Methoden im CampsitePricingCalculator zu haben:</p>
           <ul>
             <li>calcTentPrice(LocalDate startDate, CampsiteBookingManager campsiteBookingManager)</li>
