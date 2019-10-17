@@ -21,17 +21,17 @@
             <li>book: Eine Methode, um einen Zeltplatz, einen Campingwagenplatz oder eine Blockhütte für eine Woche zu buchen</li>
             <li>calc: Eine Methode, um den Preis für einen solchen Platz für eine Woche zu ermitteln</li>
           </ul>
-          <p>Die Sourcen findet ihr <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/browse">hier</a>.
-          <p>Um mit der Übung anzufangen, checkt bitte Commit <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/ada717cd9081455486fe6d98cad956342e2b84a6">ada717cd908  Fields private</a> aus.</p>
+          <p>Die Sourcen findet ihr <a href="https://github.com/sebkro/bootcamp-refactoring">hier</a>.</p>
+          <p>Leider ist der Code in keinen guten Zustand. Daher wollen wir ihn gemeinsam besser machen. Folgt dazu den nächsten Schritten.</p>
 
 
           <h2>Schritt 1</h2>
           <p>Zunächst sollen ein paar der Variablen sprechendere Namen bekommen, damit wir und andere in Zukunft deren Funktionen besser verstehen.</p>
           <p>Dies könnt ihr manuell machen oder ihr nutzt die Funktionen euerer IDE.</p>
-          <p>Umbennen einer Variable/Klasse/Methode mit eclipse</p>
+          <p>Umbennen einer Variable/Klasse/Methode mit intellij</p>
           <ul>
             <li>Mit Cursor umzubenennende Variable/Klasse/Methode auswählen</li>
-            <li>Dann: Refactor > Rename...</li>
+            <li>Dann: Rechtsklick > Refactor > Rename...</li>
           </ul>
           <p>In der Klasse Campsite Manager
           <ul>
@@ -40,32 +40,32 @@
             <li>Zeile 33: Umbenennen der Variable act in weekBookings</li>
           </ul>
 
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/d01dd2cccde4f9ecefb5857cc9d116e024e5e2e7">1 - Rename variables</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/bccca3c5ec221856fd8b827acbaf875fa9ba3ca4">1 - Rename variables</a> aussehen.</p>
 
           <h2>Schritt 2</h2>
           <p>Als nächstes soll der Code zur Prüfung, ob das übergebene Datum erlaubt ist, in eine eigene Methode azusgelagert werden.</p>
           <p>Der Code-Smell, den wir mit diesem Schritt beheben ist <a href="https://sourcemaking.com/refactoring/smells/duplicate-code">Duplicate Code</a>, da diese Funktionalität im CampsiteManager in Zeile 29-31 und in Zeile 56 - 58 verwendet wird.
           <p>Das entsprechende Refactoring-Receipt findet ihr <a href="https://sourcemaking.com/refactoring/extract-method">hier</a>.</p>
           <p>Auch hier könnt ihr entscheiden, ob ihr das Refactoring manuell machen wollt oder die Funktionen euerer IDE benutzt.</p>
-          <p>Extact Method mit eclipse</p>
+          <p>Extact Method mit intellij</p>
           <ul>
             <li>Den zu extrahierenden Code markieren</li>
-            <li>Refactor > Extract Method...</li>
+            <li>Dann Rechtsklick > Refactor > Extract > Method > ...</li>
             <li>Im sich öffnenden Dialog einen Namen für die neue Methode vergeben</li>
             <li>ok</li>
           </ul>
           <p>In der Klasse Campsite Manager soll der Code in Zeile 29-31 und in Zeile 56 - 58 in eine neue Methode "checkStartDay" extrahiert werden.</p>
 
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/4b085d7a64255a43ac53c2588adeb13f3f754cd0">2 - extractMethod</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/bccfda3164ce6caad5a89fb32790eaa77e59c95f">2 - extract method</a> aussehen.</p>
 
 
           <h2>Schritt 3</h2>
           <p>Der int Array in Zeile 25 riecht stark nach <a href="https://sourcemaking.com/refactoring/smells/primitive-obsession">Primitive Obsession</a>.</p>
-          <p>Das entsprchende Refactoring hierzu heißt <a href="https://sourcemaking.com/refactoring/replace-array-with-object">Replace Array With Object</a>.</p>
+          <p>Das entsprechende Refactoring hierzu heißt <a href="https://sourcemaking.com/refactoring/replace-array-with-object">Replace Array With Object</a>.</p>
           <p>Wir wollen den int Array durch eine Klasse "WeeklyBooking" mit den Feldern cabins, caravans und tents ersetzen. Eine Instanz dieser Klasse speichert, wie viele Stellplatze zu einer bestimmten Woche bereits gebucht sind.</p>
-          <p>Ihr könnt den Code für die neue Klasse <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/b6b063b75c746e9d9783f2de75991c060d95edc8#src/main/java/com/cgi/bootcamp/refactoring/WeeklyBooking.java">hier</a> kopieren.</p>
+          <p>Ihr könnt den Code für die neue Klasse <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/blob/master/src/main/java/com/cgi/bootcamp/refactoring/WeeklyBooking.java">hier</a> kopieren.</p>
 
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/b6b063b75c746e9d9783f2de75991c060d95edc8">3 - Replace Array With Object</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/657726ef588042acc5636482264ea10d39a2de17">3 - Replace Array With Object</a> aussehen.</p>
 
           <h2>Schritt 4</h2>
           <p>Als nächstes wollen wir die Methode calc in ein eigene eigene Klasse extrahieren. Als Vorbereitung für diesen Schritt beginnen wir damit, in der Methode calc den Zugriff auf Felder auf getter umzustellen.</p>
@@ -75,7 +75,7 @@
             <li>Refacor > Encapsulate Field...</li>
           </ul>
 
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/912782eca305cda2bb2dfab2cdb808e9214d4bfc">3 - Encapsulate Field - Nachtrag</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/677d870b985a9595b09b9c4f0298dc191b4879f7">4 - Encapsulate Field</a> aussehen.</p>
 
           <h2>Schritt 5</h2>
           <p>Jetzt wollen wir die Methode calc in eine neue Klasse CampsitePricingCalculator umziehen - Stichwort Single Resposibility Principle. Der neue Klasse ist verantwortlich für die Preisberechnung, die bestehende für die Verwaltung der Buchungen.</p>
@@ -84,24 +84,24 @@
           
           <p>Nachdem die Methode calc in die neue Klasse umgezogen wurde, sollen die Felder tentBase, cabinBase, caravanBase, lastAvailableStart ebenfalls umgezogen werden. Schließlich werden sie nur für die Preisberechnung genutzt. Das entsprechende Refactoring ist <a href="https://sourcemaking.com/refactoring/move-field">Move Field</a>.</p>
 
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/76d2d4f86fd95f694210bf4b63182d74d8751b15">4 - Replace Method with Method Object</a> sein.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/ea47797d91d2cb647ae3cd3aac652598be049370">5 - Replace Method with Method Object</a> sein.</p>
 
           <h2>Schritt 6</h2>
           <p>Um Felder die umgezogenen Felder noch einmal sprechender zu machen wollen wir sie noch einmal zu tentBasePrice, cabinBasePrice, caravanBasePrice umbenennen - manuell oder mit Hilfe der IDE.</p>
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/7b86f6e91ccc065e0096beb0cbce54da6252813b">5 - Rename Field</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/2655126778e028394f98a61290b8a4f24aa3501c">6 - Rename attribute</a> aussehen.</p>
 
           <h2>Schritt 7</h2>
           <p>Da das Klasse CampsiteManager jetzt nur noch für das Buchen verantwortlich ist, soll sie in CampsiteBookingManager umbenannt werden - manuell oder mit Hilfe der IDE.</p>
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/9d66a6634ef638737f166b7abbfe8621086f657f">6 - Rename Class</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/eaf434c2911b572eb9639f09423e99669218b4e1">7 - Rename Class</a> aussehen.</p>
 
           <h2>Schritt 8</h2>
           <p>Da das Klasse CampsiteManager jetzt ein CampsiteBookingManager ist, soll die Variable campsiteManager in der Klasse CampsitePricingCalculator zu campsiteBooking Manager umbenannt werden.</p>
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/a039765cd94633bda8d9d1a14ef5424a72bb5792">7 - Rename Variables</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/21e92e09b7c01cfd415cdc295641695b44c31a77">8 - Rename Variables</a> aussehen.</p>
 
           <h2>Schritt 9</h2>
           <p>Der Ausdruck "campsiteBookingManager.getBookings().get(startDate)" im CampsitePricingCalculator riecht nach <a href="https://sourcemaking.com/refactoring/smells/message-chains">Message Chains</a>.</p>
           <p>Dieser Smell sollte anhand von <a href="https://sourcemaking.com/refactoring/hide-delegate">Hide Delegate</a> entfernt werden.</p>
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/284ad835a2f1c59de7a65a4ea42aba96883113e0">8 - Hide Delegate</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/67c501e396ee8e0f112ccd0830b12487052df2ba">9 - Hide Delegate</a> aussehen.</p>
 
           <h2>Schritt 10</h2>
           <p>Als nächstes wollen wir die Unschönheit beseitigen, dass bei calc übergeben wird, ob der Preis für ein Zelt, einen Wohnwagen oder für eine Hütte berechnet werden soll - hier passieren leicht Fehler beim Aufruf der Methode (<a href="https://sourcemaking.com/refactoring/smells/long-parameter-list">Long Parameter List</a>). Deswegen wollen wir <a href="https://sourcemaking.com/refactoring/replace-parameter-with-explicit-methods">Replace Parameter with Explicit Methods</a> verwenden, um den Aufruf einfacher zu gestalten.</p>
@@ -111,37 +111,37 @@
             <li>calcCabinPrice(LocalDate startDate, CampsiteBookingManager campsiteBookingManager)</li>
             <li>calcCaravanPrice(LocalDate startDate, CampsiteBookingManager campsiteBookingManager)</li>
           </ul>
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/b16e0c053a371419f4d893d7ede63c5602f7b88c">9 - ReplaceParameterWithExplicitMethods</a> aussehen.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/4a08568c72c3b1f6f4fe3c2db190285bde5a64d3">10 - Replace Parameter With Explicit Methods</a> aussehen.</p>
 
           <h2>Schritt 11</h2>
           <p>Während Schritt 9 ist mir der unschöne Variblenname "x" aufgefallen, der sich jetzt in den 3 calc-Methoden befindet. Er sollte in einen sprechenden Namen (z.B. price) umbenannt werden - manuell oder mit Hilfe der IDE.</p>
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/3b9764e3486c6556c0c4a5e464bbf7458ae19577">10 - Rename Variable</a> sein.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/0f327422b0677f157eda0b4c7ab5180fa9e5c992">11 - Rename Variable</a> sein.</p>
 
           <h2>Schritt 12</h2>
           <p>Nun wollen wir den Code zur Preisberechnung noch ein bisschen lesbarer machen, indem wir <a href="https://sourcemaking.com/refactoring/extract-variable">Extract Variable</a> verwenden. Auch dieses Refactoring kann mit Hilfe der IDE durchgeführt werden.</p>
           <p>Der Ausdruck "campsiteBookingManager.getWeeklyBooking(startDate).getTents()" könnte z.B. zur Variable "bookedTents" werden.</p>
           <p>Der Ausdruck "campsiteBookingManager.getTents() - bookedTents" z.B. zur Variable "availableTents"</p>
           <p>Analog sollte bei den Methoden für die Preisberechnung bei Wohnwagen und Hütten vorgegangen werden</p>
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/83a079283820a06f4b3f5fb18b994e2ffbe0395a">11 - Extract Variable</a> sein.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/22e3727c70b3e750bb81a975a1a9528d61535e6c">12 - Extract Variable</a> sein.</p>
 
           <h2>Schritt 13</h2>
           <p>Den Ausdruck "campsiteBookingManager.getBookings().get(startDate)" im CampsitePricingCalculator haben wir bereits erfolgreich Refactored.</p>
           <p>campsiteBookingManager.getWeeklyBooking(startDate).getTents() ist trotzdem noch eine weitere Message Chain, die wir auch entfernen wollen.</p>
           
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/3a8e245e5cdc97865a4b9b3f766fe1bc4b8660b3">12 - Hide Delegate</a> sein.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/8ac86194e49bcb15c3bbcdd0de8f3fc69b764e43">13 - Hide Delegate</a> sein.</p>
 
           <h2>Schritt 14</h2>
           <p>Lagert den Code für die Berechnung des Aufpreises bei den letzten verfügbaren Plätzen in eine eigene Methode aus.</p>
           
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/79d485dad908fec8c06602aa31c526fca85b21c4">13 - Extract Method</a> sein.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/efa86a2b5e7f1898ebe68a63a77fffb63b84e1fd">14 - Extract Method</a> sein.</p>
 
           <h2>Schritt 15</h2>
           <p>Lagert den Code für die Berechnung des Aufpreises für Buchungen in der Hochsaison in eine eigene Methode aus.</p>
           
-          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/99ea5bc4ba8df7cc6816a4ab9ca33e72f503b4e4">14 - Extract Method</a> sein.</p>
+          <p>Danach sollte euer Code ähnlich dem Stand <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/07fcd8a93956f6afdd0d34690e48aa9758d92634">15 - Extract Method</a> sein.</p>
 
           <h2>Schritt 16</h2>
-          <p>In diesem Schritt habe ich die Preisberechnung noch ein bisschen vereinfacht, indem ich den Code mit der Prüfung, ob überhaupt noch freie Plätze verfügbar sind, in eine eigene Methode ausgelagert habe. Seht auch diesen Commit an und vollzieht die Änderungen nach: <a href="https://smaf.de.cgi.com/bitbucket/projects/JAVAB/repos/refactoring/commits/3f4fcd434485affd5bf3568785a1b3ba797572d2">15 - Extract Method</a>.</p>
+          <p>In diesem Schritt habe ich die Preisberechnung noch ein bisschen vereinfacht, indem ich den Code mit der Prüfung, ob überhaupt noch freie Plätze verfügbar sind, in eine eigene Methode ausgelagert habe. Seht auch diesen Commit an und vollzieht die Änderungen nach: <a href="https://github.com/sebkro/bootcamp-refactoring-loesung/commit/542fe6698ee67d1bc9de01c0b5e69e14ba704f0e">16 - Extract Method</a>.</p>
 
         </div>
       </div>
